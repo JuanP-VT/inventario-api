@@ -4,4 +4,4 @@ const categorieSchema = new mongoose.Schema({
   iconUrl: String,
 });
 
-module.export = mongoose.model("Categories", categorieSchema);
+module.exports = mongoose.model("Categories", categorieSchema);
