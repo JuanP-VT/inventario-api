@@ -24,7 +24,7 @@ ProductsRoute.post("/", async (req, res) => {
     }
     const newProduct = new ProductsModel({ name: req.body.name });
     await newProduct.save();
-    res.send(newProduct);
+    res.send({ msg: "Success" });
   } catch (e) {
     res.send(e.message);
   }

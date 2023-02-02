@@ -26,7 +26,7 @@ CategoriesRoute.post("/", async (req, res) => {
       iconUrl: req.body.iconUrl,
     });
     await newCategorie.save();
-    res.send({ msg: "Succes" });
+    res.send({ msg: "Success" });
   } catch (e) {
     res.send({ msg: e.message });
   }
