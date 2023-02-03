@@ -6,7 +6,7 @@ const CategoriesModel = require("../Models/CategoriesModel");
 CategoriesRoute.get("/", async (req, res) => {
   try {
     const allCategories = await CategoriesModel.find();
-    res.send({ res: allCategories });
+    res.send(allCategories);
   } catch (e) {
     res.send(e.message);
   }
