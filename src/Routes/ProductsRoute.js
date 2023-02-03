@@ -22,7 +22,12 @@ ProductsRoute.post("/", async (req, res) => {
       res.send({ msg: "Name is already in database" });
       return;
     }
-    const newProduct = new ProductsModel({ name: req.body.name });
+    const newProduct = new ProductsModel({
+      name: req.body.name,
+      categorie: req.body.categorie,
+      stock: req.body.stock,
+      price: req.body.price,
+    });
     await newProduct.save();
     res.send({ msg: "Success" });
   } catch (e) {
