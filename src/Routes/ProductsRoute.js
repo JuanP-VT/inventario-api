@@ -34,5 +34,18 @@ ProductsRoute.post("/", async (req, res) => {
     res.send(e.message);
   }
 });
-
+ProductsRoute.put("/", async (req, res) => {
+  try {
+    const id = req.body._id;
+    await ProductsModel.findByIdAndUpdate(id, {
+      name: req.body.name,
+      categorie: req.body.categorie,
+      stock: req.body.stock,
+      price: req.body.price,
+    });
+    res.send({ msg: "Success" });
+  } catch (e) {
+    res.send(e.message);
+  }
+});
 module.exports = ProductsRoute;
