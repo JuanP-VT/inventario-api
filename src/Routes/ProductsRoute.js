@@ -7,7 +7,6 @@ const ProductsModel = require("../Models/ProductsModel");
 ProductsRoute.get("/", async (req, res) => {
   try {
     const allProducts = await ProductsModel.find();
-    ProductsModel.updateMany({}, { $rename: { categorie: "category" } });
     res.send(allProducts);
   } catch (e) {
     res.send(e.message);
