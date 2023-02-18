@@ -11,7 +11,7 @@ CategoriesRoute.get("/", async (req, res) => {
     res.send(e.message);
   }
 });
-//Create new categorie and verify that new categorie does not exist in database
+//Create new category and verify that new category does not exist in database
 CategoriesRoute.post("/", async (req, res) => {
   try {
     const findDuplicate = await CategoriesModel.where("name").equals(
@@ -21,11 +21,11 @@ CategoriesRoute.post("/", async (req, res) => {
       res.send({ msg: "Name is already in database" });
       return;
     }
-    const newCategorie = new CategoriesModel({
+    const newCategory = new CategoriesModel({
       name: req.body.name,
       iconUrl: req.body.iconUrl,
     });
-    await newCategorie.save();
+    await newCategory.save();
     res.send({ msg: "Success" });
   } catch (e) {
     res.send({ msg: e.message });
