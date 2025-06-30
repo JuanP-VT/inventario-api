@@ -7,8 +7,6 @@ app.use(express.json());
 //Cors
 const cors = require("cors");
 app.use(cors());
-//Database Models
-const Categories = require("./Models/CategoriesModel");
 //Routes
 const CategoriesRoute = require("./Routes/CategoriesRoute");
 const ProductsRoute = require("./Routes/ProductsRoute");
@@ -17,4 +15,4 @@ mongoose.connect(process.env.MONGOURL);
 
 app.use("/categories", CategoriesRoute);
 app.use("/products", ProductsRoute);
-app.listen(process.env.PORT || 8080);
+app.listen(3000);
